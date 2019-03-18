@@ -12,7 +12,7 @@
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
-<body onload="getContact()">
+<body>
 	
 	<div data-role="page" id="firstPage">
 
@@ -24,15 +24,19 @@
 		<div data-role="content">	
 			<a href="#AddNewContactPage" data-role="button" data-icon="plus" data-theme="d">Add</a><br><br>
 			<ul data-role="listview" data-inset="true" data-filter="true" >
-				<li onclick="showContactDetails('Ahmed khaled')"><a href="#thirdPage"><img id="fristContact" src="images/user-female.png" width="50" height="50">Mayada khaled
+				<li><a href="#thirdPage"><img id="fristContact" src="images/user-female.png" width="50" height="50">Mayada khaled
 				<a href="tel:+14123815500" data-role="button" data-icon="phone"></a></a></li>
-				<li onclick="showContactDetails('Ahmed khaled')"><a href="#thirdPage"><img id="fristContact" src="images/user-male.png" width="50" height="50">Ahmed khaled
+				
+				<li><a href="#thirdPage"><img id="fristContact" src="images/user-male.png" width="50" height="50">Ahmed khaled
 				<a href="tel:+14123815500" data-role="button" data-icon="phone"></a></a></li>
-				<li onclick="showContactDetails('Ahmed khaled')"><a href="#thirdPage"><img id="fristContact" src="images/user-male.png" width="50" height="50">Mohamed Gamal
+				
+				<li><a href="#thirdPage"><img id="fristContact" src="images/user-male.png" width="50" height="50">Mohamed Gamal
 				<a href="tel:+14123815500" data-role="button" data-icon="phone"></a></a></li>
-				<li onclick="showContactDetails('Ahmed khaled')"><a href="#thirdPage"><img id="fristContact" src="images/user-female.png" width="50" height="50">Aya Ali
+				
+				<li><a href="#thirdPage"><img id="fristContact" src="images/user-female.png" width="50" height="50">Aya Ali
 				<a href="tel:+14123815500" data-role="button" data-icon="phone"></a></a></li>
-				<li onclick="showContactDetails('Ahmed khaled')"><a href="#thirdPage"><img id="fristContact" src="images/user-female.png" width="50" height="50">Nour Ahmed
+				
+				<li><a href="#thirdPage"><img id="fristContact" src="images/user-female.png" width="50" height="50">Nour Ahmed
 				<a href="tel:+14123815500" data-role="button" data-icon="phone"></a></a></li>
 			</ul>
 		
@@ -71,9 +75,9 @@
 				
 				 <table style="width:60%" id="personTable">
 				  <tr >
-					<th width="20"><a href="#fourthPage" data-role="button" data-icon="delete" data-theme="b"></a></th>
-					<th width="20"><a href="#AddNewContactPage" data-role="button" data-icon="edit" data-theme="b"></a></th>
-					<th width="20"><a href="tel:" data-role="button" data-icon="phone" data-theme="b"></a></th>
+					<th width="20"><button id="buttonId" type="button"  data-icon="delete" data-theme="b">Delete</button></th>
+					<th width="20"><a href="#AddNewContactPage" data-role="button" data-icon="edit" data-theme="b">Edit</a></th>
+					<th width="20"><a href="tel:" data-role="button" data-icon="phone" data-theme="b">Call</a></th>
 					</tr>
 
 				</table> 
@@ -85,20 +89,16 @@
 	
 	<!-- M7md -->
 	
-	<div data-role="page" id="fourthPage">
-
-		<div data-role="header">
-		<h1>delete confirmation</h1>
-		</div>
-	
-		<div data-role="content">	
-		<p>Hello world</p>		
-		</div>
-
+	<div  id="dialog" style="display:none">
+		
+			<p>Are You Sure you want to delete ?</P>
+			<br><br>		
+			<button id="yesButton" type="button" onclick="deletePreson()"> yes</button>
+			<button id="btnCancel" type="button" onclick="stopDeleting()"> Cancel</button>
 	</div>
-	
 	<!-- page4 (Delete Dialog) -->
 	
 </body>
+<script src="script/firstPage.js"></script> 
 
 </html> 

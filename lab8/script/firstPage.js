@@ -1,3 +1,4 @@
+var textElement;
 function getContact ()
 {
 	
@@ -28,4 +29,76 @@ function getContact ()
 		}
 		
 	}
+	
 }
+function name()
+{
+	
+	document.getElementById("contactName").innerHTML= textElement;
+		
+}
+
+$("li").click(function() {
+	textElement = $(this).text();	
+    name();
+});
+
+$(function(){
+	$("#buttonId").click(function(){
+		$("#dialog").dialog({
+			title:"Delete Step",
+			width:430 ,
+			height :200 ,
+			modal : true, 
+			buttons: {
+				Close :
+				function(){
+					$(this).dialog('close');
+				}
+			}
+		});
+	});
+});
+
+
+
+
+
+
+
+
+
+
+/*$('#deletebutton').click(function() 
+{
+    $("#dialog").dialog();
+	/*.animate({
+            backgroundColor: "purple",
+            color: "white",
+            width: 500
+			, modal: true,
+            close: function(event) {
+                $("#dialog").hide();
+                }
+            });
+       
+});*/
+
+ 
+function deletePreson()
+{
+	//localStorage.removeItem(localStorage.key(newid));
+}
+function stopDeleting()
+{
+	  $("#dialog"). hide();
+}
+
+
+
+
+
+
+
+
+
