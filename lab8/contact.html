@@ -5,11 +5,13 @@
 <title>contact list</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style/addNewContactPage.css">
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="style/addNewContactPage.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
 </head>
 
 <body>
@@ -50,13 +52,40 @@
 	<div data-role="page" id="AddNewContactPage" data-add-back-btn="true">
 
 		<div data-role="header">
-		<h1>contact details</h1>
+		<h1>Add New Contact</h1>
+		<a href="#firstPage" data-rel="back" data-icon="carat-l" data-iconpos="notext" class="ui-link ui-btn-left ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all ui-btn-active" data-role="button" role="button">Back</a>
 		</div>
 	
 		<div data-role="content">	
-		<label for="name">Name</label> <input type="text" id="name" required>
-			
+			<form action="submit">
+				<div data-role="fieldcontain">
+						<label>Name</label> <input type="text" id="name" required>
+				</div>
+
+				<div data-role="fieldcontain">
+						<label for="phone">Phone</label> <input type="text" id="phone" required>	
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="email">Email</label> <input type="email" id="email" required>
+				</div>
+				
+				<div data-role="fieldcontain">
+						<label for="gender">Gender</label>
+						<select name="slider" id="gender" data-role="slider">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+				</div>
+				
+				<input type="button" id="submit" value="Save" data-icon="plus" data-inline="true">
+				<input type="button" value="Cancel" data-icon="delete" data-inline="true">
+			</form>
 		</div>
+
+		<footer data-role="footer">
+			<h2>Contact List</h2>
+		</footer>
 
 	</div>
 	<!-- page2 -->
@@ -99,6 +128,8 @@
 	<!-- page4 (Delete Dialog) -->
 	
 </body>
+
 <script src="script/firstPage.js"></script> 
+<script src="script/addNewContactScript.js"></script>
 
 </html> 
