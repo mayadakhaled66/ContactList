@@ -6,6 +6,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="style/addNewContactPage.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 </head>
@@ -20,7 +21,7 @@
 	<!--Mayada -->
 	
 		<div data-role="content">	
-			<a href="#thirdPage" data-role="button" data-icon="pluse" data-theme="b">Add</a><br><br>
+			<a href="#AddNewContactPage" data-role="button" data-icon="pluse" data-theme="b">Add</a><br><br>
 			<ul data-role="listview" data-inset="true" data-filter="true" >
 				<li><a href="#secondPage"><img id="fristContact" src="images/user-female.png" width="50" height="50">Mayada khaled
 				<a href="tel:+14123815500" data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"></a></a></li>
@@ -41,14 +42,15 @@
 	
 	<!--M7md -->
 	
-	<div data-role="page" id="secondPage">
+	<div data-role="page" id="AddNewContactPage" data-add-back-btn="true">
 
 		<div data-role="header">
 		<h1>contact details</h1>
 		</div>
 	
 		<div data-role="content">	
-		<p>Hello world</p>		
+		<label for="name">Name</label> <input type="text" id="name" required>
+			
 		</div>
 
 	</div>
