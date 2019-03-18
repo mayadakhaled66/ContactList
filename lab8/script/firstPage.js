@@ -47,26 +47,14 @@ $(function(){
 	$("#buttonId").click(function(){
 		$("#dialog").dialog({
 			title:"Delete Step",
+			backgroundColor: "purple",
 			width:430 ,
 			height :200 ,
 			modal : true, 
-			buttons: {
-				Close :
-				function(){
-					$(this).dialog('close');
-				}
-			}
+			
 		});
 	});
 });
-
-
-
-
-
-
-
-
 
 
 /*$('#deletebutton').click(function() 
