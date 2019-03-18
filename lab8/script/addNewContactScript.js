@@ -8,7 +8,7 @@ function Person(name,phone,email,gender){
 }
 
 function addNewUser(){
-    var contacts = JSON.parse(localStorage.getItem('contacts'));
+    var contacts = JSON.parse(localStorage.getItem('contacts')) || [];
     console.log(contacts.length)
     var userName = $("#name").val();
     var phoneNum = $("#phone").val();
