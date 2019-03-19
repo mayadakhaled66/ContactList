@@ -13,11 +13,11 @@ function getContact ()
 		if (pGender=="female")
 		{
 			
-			$("ul").append('<li><a href="#secondPage"><img src="images/user-female.png" width="50" height="50">'+pName+'<a href=tel:'+pPhone+' data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"></a></a></li>');
+			$("ul").append('<li><a href="#thirdPage"><img src="images/user-female.png" width="50" height="50"><label id="Username" >' +pName+' </label><a href=tel:'+pPhone+' data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"></a></a></li>');
 		}
 		else 
 		{
-			$("ul").append('<li><a href="#secondPage"><img src="images/user-male.png" width="50" height="50">'+pName+'<a href="tel:'+pPhone+' data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"></a></a></li>');
+			$("ul").append('<li><a href="#thirdPage"><img src="images/user-male.png" width="50" height="50">'+pName+'<a href="tel:'+pPhone+' data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"></a></a></li>');
 
 		}
 		
@@ -82,7 +82,9 @@ function stopDeleting()
 
 
 
-
+$(document).on('pagebeforeshow','#thirdPage' , function(e,data){
+	console.log(data.prevPage.find('#userName').text())
+})
 
 
 
