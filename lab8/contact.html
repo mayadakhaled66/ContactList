@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<meta charset="UTF-8">
+	
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="style/addNewContactPage.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -16,15 +17,15 @@
 
 <body>
 	
-	<div data-role="page" id="firstPage">
+	<div data-role="page" id="firstPage" style="background-image : url('call.jpg')">
 
-		<div data-role="header">
+		<div data-role="header" data-theme="b">
 		<h1>contact list</h1>
 		</div>
 	<!--Mayada -->
 	
 		<div data-role="content">	
-			<a href="#AddNewContactPage" data-transition="flip" data-role="button" data-icon="plus" data-theme="d">Add</a><br><br>
+			<a href="#AddNewContactPage" data-transition="flip" data-role="button" data-icon="plus" data-theme="c">Add</a><br><br>
 			<ul data-role="listview" data-inset="true" data-filter="true" id="contactList">
 				
 			</ul>
@@ -36,7 +37,7 @@
 	
 	<!--M7md -->
 	
-	<div data-role="page" id="AddNewContactPage" data-add-back-btn="true">
+	<div data-role="page" id="AddNewContactPage" data-add-back-btn="true" style="background-image : url('call.jpg')">
 
 		<div data-role="header">
 		<h1>Add New Contact</h1>
@@ -79,7 +80,7 @@
 	
 	<!--Mayada -->
 	
-	<div data-role="page" id="thirdPage" data-add-back-btn="true">
+	<div data-role="page" id="thirdPage" data-add-back-btn="true" style="background-image : url('call.jpg')">
 
 		<div data-role="header">
 		<h1 id="contactName"></h1>

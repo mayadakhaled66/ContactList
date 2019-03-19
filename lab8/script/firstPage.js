@@ -28,7 +28,7 @@ function getContact ()
 window.onload = getContact;
 	
 
-function name()
+function setName()
 {
 	
 	document.getElementById("contactName").innerHTML= textElement;
@@ -36,12 +36,9 @@ function name()
 }
 
 
-
 $(function(){
 	$("#buttonId").click(function(){
 		$("#dialog").dialog({
-			title:"Delete Step",
-			backgroundColor: "purple",
 			width:430 ,
 			height :200 ,
 			modal : true, 
@@ -50,28 +47,12 @@ $(function(){
 	});
 });
 
-
-/*$('#deletebutton').click(function() 
-{
-    $("#dialog").dialog();
-	/*.animate({
-            backgroundColor: "purple",
-            color: "white",
-            width: 500
-			, modal: true,
-            close: function(event) {
-                $("#dialog").hide();
-                }
-            });
-       
-});*/
-
 function contactDet(obj , pPhone)
 {
 	textElement = $(obj).text();	
 	userPhone = pPhone;
-	//console.log(userPhone+"");
-    name();
+	
+    setName();
 }
 
 function deletePreson()
@@ -92,8 +73,12 @@ function deletePreson()
 		
 	}
 	
+        parent.history.back();
+      
 	$('#contactList li:contains(textElement)').remove();
 	$("#dialog").hide();
+	
+	
 	
 }
 function stopDeleting()
