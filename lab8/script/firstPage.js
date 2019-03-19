@@ -1,7 +1,9 @@
 var textElement;
+var retreivedArray;
+var userPhone;
 function getContact ()
 {		
-	var retreivedArray = JSON.parse(localStorage.getItem('contacts'));		
+	retreivedArray = JSON.parse(localStorage.getItem('contacts'));		
 	for (var counter = 0 ; counter < retreivedArray.length ;counter++)
 	{
 		
@@ -12,12 +14,11 @@ function getContact ()
 		
 		if (pGender=="female")
 		{
-			
-			$("ul").append('<li><a href="#thirdPage"><img src="images/user-female.png" width="50" height="50"><label id="Username" >' +pName+' </label><a href=tel:'+pPhone+' data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"></a></a></li>');
-		}
+			$("ul").append('<li onclick="contactDet(this ,'+pPhone+')"><a href="#thirdPage" data-transition="flip"><img src="images/user-female.png" width="50" height="50">'+pName+'<a href="tel:'+pPhone+'" data-role="button" date-icon="phone"></a></a></li>');
+		}                  
 		else 
 		{
-			$("ul").append('<li><a href="#thirdPage"><img src="images/user-male.png" width="50" height="50">'+pName+'<a href="tel:'+pPhone+' data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone"></a></a></li>');
+			$("ul").append('<li onclick="contactDet(this,'+pPhone+')"><a href="#thirdPage" data-transition="flip"><img src="images/user-male.png" width="50" height="50">'+pName+'<a href="tel:'+pPhone+'" data-role="button"  date-icon="phone"></a></a></li>');
 
 		}
 		
@@ -34,10 +35,7 @@ function name()
 		
 }
 
-$("li").click(function() {
-	textElement = $(this).text();	
-    name();
-});
+
 
 $(function(){
 	$("#buttonId").click(function(){
@@ -68,14 +66,39 @@ $(function(){
        
 });*/
 
- 
+function contactDet(obj , pPhone)
+{
+	textElement = $(obj).text();	
+	userPhone = pPhone;
+	//console.log(userPhone+"");
+    name();
+}
+
 function deletePreson()
 {
-	//localStorage.removeItem(localStorage.key(newid));
+	var ArrayOfElement = JSON.parse(localStorage.getItem('contacts'));
+	for (var counter = 0 ; counter < retreivedArray.length ;counter++)
+	{
+		var pNameValue  = retreivedArray[counter].name;
+		var pPhoneValue = retreivedArray[counter].phone;
+		
+		if (pNameValue == textElement && pPhoneValue == userPhone)
+		{
+			ArrayOfElement.splice(counter , 1);
+			
+			localStorage.setItem('contacts', JSON.stringify(ArrayOfElement));
+		}                  
+		
+		
+	}
+	
+	$('#contactList li:contains(textElement)').remove();
+	$("#dialog").hide();
+	
 }
 function stopDeleting()
 {
-	  $("#dialog"). hide();
+	  $("#dialog").hide();
 }
 
 
